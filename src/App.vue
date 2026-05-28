@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 console.log('App.vue')
-import logo from './assets/logo.jpg'
+import logo from './assets/logo.png'
 const router = useRouter()
 const route = useRoute()
 const isMenuOpen = ref(true)
