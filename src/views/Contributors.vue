@@ -1,7 +1,7 @@
 <template>
   <div class="document-page">
     <h1>Contributors</h1>
-    <p>Thanks to all contributors who build and maintain STORM.</p>
+    <p>Thanks to all contributors who build and maintain SQUALL.</p>
 
     <section>
       <h2>Core Contributors</h2>

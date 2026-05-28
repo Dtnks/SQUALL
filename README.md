@@ -1,7 +1,7 @@
-# STORM: Pathology–Spatial Transcriptomics Foundation Model Overview
+# SQUALL: Pathology–Spatial Transcriptomics Foundation Model Overview
 
 ## Positioning
-- STORM is a 555M-parameter multimodal foundation model that bridges H&E pathology images and spatial transcriptomics, unifying morphology and molecular signals. 
+- SQUALL is a 555M-parameter multimodal foundation model that bridges H&E pathology images and spatial transcriptomics, unifying morphology and molecular signals. 
 - Two-stage self-supervised pretraining enables strong generalization for cross-modal alignment, reconstruction, and downstream adaptation.
 
 ## Training Corpus & Preprocessing

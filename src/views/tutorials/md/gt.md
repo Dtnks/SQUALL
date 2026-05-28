@@ -13,7 +13,7 @@ from torch.utils.data import Dataset, DataLoader
 from torch.cuda.amp import autocast, GradScaler
 from pathlib import Path
 from skimage import io
-from models.Storm import Storm
+from models.SQUALL import SQUALL
 from scipy.sparse import csr_matrix
 from tqdm import tqdm
 import time
@@ -54,7 +54,7 @@ def get_encoder(config_path, ckpt_path, device='cpu'):
     model_config = AttrDict(config['model'])
 
     # build model
-    model = Storm(model_config)
+    model = SQUALL(model_config)
 
     # load ckpt
     state_dict = torch.load(ckpt_path, map_location="cpu")["base_model"]
@@ -103,7 +103,7 @@ rgb = torch.from_numpy(img).float().unsqueeze(0)
 expr = torch.load(expr_sample, weights_only=True)#.unsqueeze(0)
 res = torch.full((1,), 0.5, dtype=torch.float32).unsqueeze(0)
 config_path = "config.yaml"
-ckpt_path = "STORM_hires.pth"
+ckpt_path = "SQUALL_hires.pth"
 print("res",res)
 print("expr",expr.shape)
 print("rgb",rgb.shape)
@@ -123,7 +123,7 @@ rgb torch.Size([1, 224, 224, 3])
 
 /tmp/ipykernel_294866/1723400002.py:59: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
   state_dict = torch.load(ckpt_path, map_location="cpu")["base_model"]
-/home/qinbw/STORM_codebase/models/Storm.py:150: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+/home/qinbw/SQUALL_codebase/models/SQUALL.py:150: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
   res = torch.tensor(res).reshape(B, 1, 1)
 
 get_expr torch.Size([1, 56, 56, 15757])
@@ -188,11 +188,11 @@ from skimage import io
 # === 参数设置 ===
 tile_dir = "tiles"
 config_path = "config.yaml"
-ckpt_path = "STORM_hires.pth"
+ckpt_path = "SQUALL_hires.pth"
 output_dir = "OC_Xenium_public"
-#tile_dir = "/lustre1/zxzeng/bwqin/STORM/TCGA_tiles_0_5/CESC/TCGA-2W-A8YY"
+#tile_dir = "/lustre1/zxzeng/bwqin/SQUALL/TCGA_tiles_0_5/CESC/TCGA-2W-A8YY"
 #config_path = "large_ddp_rpb_lowres_benchmark.yaml"
-#ckpt_path = "STORM_lowres.pth"
+#ckpt_path = "SQUALL_lowres.pth"
 #gene_map_csv = "expr_get_embedding_Tumor.csv"
 parser = argparse.ArgumentParser(description="Process gene map CSV.")
 parser.add_argument(
@@ -226,11 +226,11 @@ from skimage import io
 # === 参数设置 ===
 tile_dir = "tiles"
 config_path = "config.yaml"
-ckpt_path = "STORM_hires.pth"
+ckpt_path = "SQUALL_hires.pth"
 output_dir = "OC_Xenium_public"
-#tile_dir = "/lustre1/zxzeng/bwqin/STORM/TCGA_tiles_0_5/CESC/TCGA-2W-A8YY"
+#tile_dir = "/lustre1/zxzeng/bwqin/SQUALL/TCGA_tiles_0_5/CESC/TCGA-2W-A8YY"
 #config_path = "large_ddp_rpb_lowres_benchmark.yaml"
-#ckpt_path = "STORM_lowres.pth"
+#ckpt_path = "SQUALL_lowres.pth"
 #gene_map_csv = "expr_get_embedding_Tumor.csv"
 parser = argparse.ArgumentParser(description="Process gene map CSV.")
 parser.add_argument(
@@ -257,13 +257,13 @@ selected_indices = list(gene_to_idx.values())
 # === 初始化模型 ===
 def get_encoder(config_path, ckpt_path, device='cpu'):
     import yaml
-    from models.Storm import Storm
+    from models.SQUALL import SQUALL
     class AttrDict(dict):
         def __getattr__(self, name):
             return self[name]
     with open(config_path) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
-    model = Storm(AttrDict(config['model']))
+    model = SQUALL(AttrDict(config['model']))
     state_dict = torch.load(ckpt_path, map_location="cpu")["base_model"]
     model.load_state_dict(state_dict, strict=True)
     model.eval().to(device)
@@ -338,7 +338,7 @@ Using gene map file: gene_token_homologs.csv
 
 /tmp/ipykernel_296266/1776368456.py:51: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
   state_dict = torch.load(ckpt_path, map_location="cpu")["base_model"]
-Processing tiles:   1%|▏         | 105/8025 [00:00<00:07, 1049.61it/s]/home/qinbw/STORM_codebase/models/Storm.py:150: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+Processing tiles:   1%|▏         | 105/8025 [00:00<00:07, 1049.61it/s]/home/qinbw/SQUALL_codebase/models/SQUALL.py:150: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
   res = torch.tensor(res).reshape(B, 1, 1)
 Processing tiles: 100%|██████████| 8025/8025 [46:39<00:00,  2.87it/s]  
 
@@ -438,7 +438,7 @@ slide_q[~mask] = 0
 ```python
 plt.figure(figsize=(10, 10))
 plt.imshow(slide_q, cmap=cmap, vmin=vmin, vmax=vmax)
-plt.title("EPCAM – STORM (whole slide)")
+plt.title("EPCAM – SQUALL (whole slide)")
 plt.axis("off")
 plt.colorbar(label="Normalized Expression", shrink=0.7)
 plt.tight_layout()

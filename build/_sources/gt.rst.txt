@@ -1,7 +1,7 @@
 gt
 ==========================
 
-.. automodule:: storm.gt
+.. automodule:: squall.gt
    :members:
    :undoc-members:
    :show-inheritance:

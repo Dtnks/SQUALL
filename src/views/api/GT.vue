@@ -29,7 +29,7 @@
         </li>
         <li class="fn">
           <div class="fn-name"><strong>get_encoder(config_path, ckpt_path, device='cpu')</strong></div>
-          <div class="fn-desc">Load and initialize the STORM encoder model; set to eval mode.</div>
+          <div class="fn-desc">Load and initialize the SQUALL encoder model; set to eval mode.</div>
           <div class="fn-param">Param config_path (str): path to model configuration YAML.</div>
           <div class="fn-param">Param ckpt_path (str): path to model checkpoint (.pth).</div>
           <div class="fn-param">Param device (str, optional): compute device.</div>
@@ -58,7 +58,7 @@
           <div class="fn-param">Param mode (str): 'rgb2emb' or 'all2emb'.</div>
           <div class="fn-param">Param input_path (str): path to input sample directory.</div>
           <div class="fn-param">Param output_path (str): path to save outputs.</div>
-          <div class="fn-param">Param model (torch.nn.Module): initialized STORM model.</div>
+          <div class="fn-param">Param model (torch.nn.Module): initialized SQUALL model.</div>
           <div class="fn-param">Param device (str): compute device.</div>
           <div class="fn-return">Returns: tuple[bool, str, str] (success, status, error message).</div>
         </li>

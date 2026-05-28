@@ -1,7 +1,7 @@
 <template>
   <div class="document-page">
     <h1>Installation</h1>
-    <p>STORM is a Python package for pathology–spatial transcriptomics modeling. Choose one of the methods below.</p>
+    <p>SQUALL is a Python package for pathology–spatial transcriptomics modeling. Choose one of the methods below.</p>
 
     <h2>Prerequisites</h2>
     <ul>
@@ -11,22 +11,22 @@
     </ul>
 
     <h2>Install from PyPI</h2>
-    <pre><code>pip install storm-foundation</code></pre>
+    <pre><code>pip install squall-foundation</code></pre>
 
     <h2>Install from source (local clone)</h2>
-    <pre><code>git clone https://github.com/your-org/storm.git
-cd storm
+    <pre><code>git clone https://github.com/your-org/squall.git
+cd squall
 pip install -e .</code></pre>
 
     <h2>GPU/Inference extras (optional)</h2>
     <pre><code># with CUDA-enabled PyTorch (example)
 pip install torch --extra-index-url https://download.pytorch.org/whl/cu121
-pip install storm-foundation[inference]</code></pre>
+pip install squall-foundation[inference]</code></pre>
 
     <h2>Verify</h2>
     <p>修改文案测试</p>
     <p>Verify the installation by running the following command:</p>
-    <pre><code>python -c "import storm; print(storm.__version__)"</code></pre>
+    <pre><code>python -c "import squall; print(squall.__version__)"</code></pre>
   </div>
 </template>
 

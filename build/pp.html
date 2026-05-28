@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pp &mdash; STORM  documentation</title>
+  <title>pp &mdash; SQUALL  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css?v=572af1d6" />
@@ -37,7 +37,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            STORM
+            SQUALL
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -52,43 +52,43 @@
 <li class="toctree-l1"><a class="reference internal" href="HDReader.html">HDReader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VisiumReader.html">VisiumReader</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">pp</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.Cal_CMatrix"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.Cal_CMatrix.get_cmtx"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix.get_cmtx()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.Cal_CMatrix.readFile"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix.readFile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.Cal_CMatrix"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.Cal_CMatrix.get_cmtx"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix.get_cmtx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.Cal_CMatrix.readFile"><code class="docutils literal notranslate"><span class="pre">Cal_CMatrix.readFile()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.HDPreprocesser"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.HDPreprocesser.process_grid"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_grid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.HDPreprocesser.process_image"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_image()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.HDPreprocesser.process_matrix"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_matrix()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.HDPreprocesser.saveFile"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.saveFile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.HDPreprocesser"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.HDPreprocesser.process_grid"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.HDPreprocesser.process_image"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.HDPreprocesser.process_matrix"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.process_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.HDPreprocesser.saveFile"><code class="docutils literal notranslate"><span class="pre">HDPreprocesser.saveFile()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.VisiumPreprocesser"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.cal_cor"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.cal_cor()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.concat_adata"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.concat_adata()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.crop_img"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.crop_img()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.expand_barcode"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.expand_barcode()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.find_avg_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.find_avg_grid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.generate_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.generate_grid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.insert_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.insert_grid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.map_tissue"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.map_tissue()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.mark_bc_label"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_bc_label()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.mark_tissue_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_tissue_grid()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.mark_tissue_label"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_tissue_label()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.process_adata"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_adata()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.process_img"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_img()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.process_tpl"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_tpl()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.round_spot"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.round_spot()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#storm.pp.VisiumPreprocesser.save"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.save()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.VisiumPreprocesser"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.cal_cor"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.cal_cor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.concat_adata"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.concat_adata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.crop_img"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.crop_img()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.expand_barcode"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.expand_barcode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.find_avg_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.find_avg_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.generate_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.generate_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.insert_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.insert_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.map_tissue"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.map_tissue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.mark_bc_label"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_bc_label()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.mark_tissue_grid"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_tissue_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.mark_tissue_label"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.mark_tissue_label()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.process_adata"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_adata()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.process_img"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_img()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.process_tpl"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.process_tpl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.round_spot"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.round_spot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#squall.pp.VisiumPreprocesser.save"><code class="docutils literal notranslate"><span class="pre">VisiumPreprocesser.save()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.downsample_svs"><code class="docutils literal notranslate"><span class="pre">downsample_svs()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.exc_he"><code class="docutils literal notranslate"><span class="pre">exc_he()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.exc_tissue"><code class="docutils literal notranslate"><span class="pre">exc_tissue()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.extract_tiles"><code class="docutils literal notranslate"><span class="pre">extract_tiles()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.process_folder"><code class="docutils literal notranslate"><span class="pre">process_folder()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storm.pp.white_balance_using_white_point"><code class="docutils literal notranslate"><span class="pre">white_balance_using_white_point()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.downsample_svs"><code class="docutils literal notranslate"><span class="pre">downsample_svs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.exc_he"><code class="docutils literal notranslate"><span class="pre">exc_he()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.exc_tissue"><code class="docutils literal notranslate"><span class="pre">exc_tissue()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.extract_tiles"><code class="docutils literal notranslate"><span class="pre">extract_tiles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.process_folder"><code class="docutils literal notranslate"><span class="pre">process_folder()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squall.pp.white_balance_using_white_point"><code class="docutils literal notranslate"><span class="pre">white_balance_using_white_point()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gt.html">gt</a></li>
@@ -100,7 +100,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">STORM</a>
+          <a href="index.html">SQUALL</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -118,16 +118,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-storm.pp">
-<span id="pp"></span><h1>pp<a class="headerlink" href="#module-storm.pp" title="Link to this heading"></a></h1>
+  <section id="module-squall.pp">
+<span id="pp"></span><h1>pp<a class="headerlink" href="#module-squall.pp" title="Link to this heading"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="storm.pp.Cal_CMatrix">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">Cal_CMatrix</span></span><a class="headerlink" href="#storm.pp.Cal_CMatrix" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.Cal_CMatrix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">Cal_CMatrix</span></span><a class="headerlink" href="#squall.pp.Cal_CMatrix" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class for calculating color matrices.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.Cal_CMatrix.get_cmtx">
-<span class="sig-name descname"><span class="pre">get_cmtx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vahadane'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.Cal_CMatrix.get_cmtx" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.Cal_CMatrix.get_cmtx">
+<span class="sig-name descname"><span class="pre">get_cmtx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vahadane'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.Cal_CMatrix.get_cmtx" title="Link to this definition"></a></dt>
 <dd><p>Get the calculated color matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -143,8 +143,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.Cal_CMatrix.readFile">
-<span class="sig-name descname"><span class="pre">readFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_img_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.Cal_CMatrix.readFile" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.Cal_CMatrix.readFile">
+<span class="sig-name descname"><span class="pre">readFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_img_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.Cal_CMatrix.readFile" title="Link to this definition"></a></dt>
 <dd><p>Read an image file and store it in the class instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -156,15 +156,15 @@
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="storm.pp.HDPreprocesser">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">HDPreprocesser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.HDPreprocesser" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.HDPreprocesser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">HDPreprocesser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.HDPreprocesser" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class for processing High - Definition (HD) data.</p>
 <p>This class provides methods to process the HD data read by an HDReader instance.
 It can process the grid, image, tissue, and matrix data, and save the processed data to files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.HDPreprocesser.process_grid">
-<span class="sig-name descname"><span class="pre">process_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.HDPreprocesser.process_grid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.HDPreprocesser.process_grid">
+<span class="sig-name descname"><span class="pre">process_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_res</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bin_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.HDPreprocesser.process_grid" title="Link to this definition"></a></dt>
 <dd><p>Generate an image and tissue grid based on the tissue position and spot - to - microscope information.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -181,8 +181,8 @@ It can process the grid, image, tissue, and matrix data, and save the processed 
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.HDPreprocesser.process_image">
-<span class="sig-name descname"><span class="pre">process_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.HDPreprocesser.process_image" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.HDPreprocesser.process_image">
+<span class="sig-name descname"><span class="pre">process_image</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.HDPreprocesser.process_image" title="Link to this definition"></a></dt>
 <dd><p>Process the image based on the image grid information.</p>
 <p>This method first converts specific columns of the image grid to NumPy arrays,
 then calculates the pixels using these arrays and the original image,
@@ -198,8 +198,8 @@ and finally post - processes the calculated image.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.HDPreprocesser.process_matrix">
-<span class="sig-name descname"><span class="pre">process_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.HDPreprocesser.process_matrix" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.HDPreprocesser.process_matrix">
+<span class="sig-name descname"><span class="pre">process_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.HDPreprocesser.process_matrix" title="Link to this definition"></a></dt>
 <dd><p>Process the matrix data and update the AnnData object.</p>
 <p>This method deletes the image grid, original image, and tissue position information
 to free up memory, then renews the AnnData object based on the tissue grid,
@@ -215,8 +215,8 @@ sets the gene token, and binarizes the matrix data.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.HDPreprocesser.saveFile">
-<span class="sig-name descname"><span class="pre">saveFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgrid_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fhe_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5ad_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.HDPreprocesser.saveFile" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.HDPreprocesser.saveFile">
+<span class="sig-name descname"><span class="pre">saveFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imgrid_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fhe_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5ad_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.HDPreprocesser.saveFile" title="Link to this definition"></a></dt>
 <dd><p>Save the processed data to files.</p>
 <p>This method can save the image grid, processed H&amp;E image, and AnnData object to files
 if the corresponding file paths are provided.</p>
@@ -237,16 +237,16 @@ if the corresponding file paths are provided.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">VisiumPreprocesser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">VisiumPreprocesser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A class for processing Visium spatial data.</p>
 <p>This class takes a file reader object and patch size as inputs,
 and provides a series of methods to process tissue position data,
 H&amp;E images, and gene expression data. The processed data can be saved to files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.cal_cor">
-<span class="sig-name descname"><span class="pre">cal_cor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.cal_cor" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.cal_cor">
+<span class="sig-name descname"><span class="pre">cal_cor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.cal_cor" title="Link to this definition"></a></dt>
 <dd><p>Generate tissue grid by tissue bounding box.</p>
 <p>This method finds the bounding box of the tissue positions within the tissue.
 It ensures that the dimensions of the bounding box are divisible by the patch size.</p>
@@ -270,8 +270,8 @@ It ensures that the dimensions of the bounding box are divisible by the patch si
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.concat_adata">
-<span class="sig-name descname"><span class="pre">concat_adata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.concat_adata" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.concat_adata">
+<span class="sig-name descname"><span class="pre">concat_adata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.concat_adata" title="Link to this definition"></a></dt>
 <dd><p>Concatenate the average, interpolated, and zero - valued AnnData objects.</p>
 <p>This method creates a zero - valued AnnData object for the remaining grid points,
 concatenates the average, interpolated, and zero - valued AnnData objects,
@@ -284,8 +284,8 @@ and ensures that the indices of the final AnnData object match the tissue grid i
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.crop_img">
-<span class="sig-name descname"><span class="pre">crop_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.crop_img" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.crop_img">
+<span class="sig-name descname"><span class="pre">crop_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.crop_img" title="Link to this definition"></a></dt>
 <dd><p>Crop and pad the H&amp;E image.</p>
 <p>This method calculates the padding needed for the H&amp;E image based on the tissue grid,
 segments the tissue in the image, balances the white color,
@@ -316,8 +316,8 @@ in the processed H&amp;E image. Each element corresponds to a color channel (e.g
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.expand_barcode">
-<span class="sig-name descname"><span class="pre">expand_barcode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.expand_barcode" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.expand_barcode">
+<span class="sig-name descname"><span class="pre">expand_barcode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.expand_barcode" title="Link to this definition"></a></dt>
 <dd><p>Expand barcode information and mark tissue grid labels.</p>
 <p>This method adds center coordinates and a number column to the final_tpl DataFrame,
 initializes two arrays for barcode and tissue labels,
@@ -332,8 +332,8 @@ expands the barcode labels, and creates a DataFrame for barcode information.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.find_avg_grid">
-<span class="sig-name descname"><span class="pre">find_avg_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.find_avg_grid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.find_avg_grid">
+<span class="sig-name descname"><span class="pre">find_avg_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.find_avg_grid" title="Link to this definition"></a></dt>
 <dd><p>Find the average grid and create an AnnData object for it.</p>
 <p>This method filters the tissue grid to include only points with valid barcodes and in - tissue status,
 calculates the average gene expression for each barcode group,
@@ -346,8 +346,8 @@ and creates an AnnData object for the average grid.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.generate_grid">
-<span class="sig-name descname"><span class="pre">generate_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.generate_grid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.generate_grid">
+<span class="sig-name descname"><span class="pre">generate_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.generate_grid" title="Link to this definition"></a></dt>
 <dd><p>Generate tissue grid.</p>
 <p>This method calculates the tissue grid boundaries using the cal_cor method,
 creates a meshgrid based on the boundaries and grid spacing,
@@ -360,8 +360,8 @@ and stores the resulting grid in a DataFrame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.insert_grid">
-<span class="sig-name descname"><span class="pre">insert_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.insert_grid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.insert_grid">
+<span class="sig-name descname"><span class="pre">insert_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.insert_grid" title="Link to this definition"></a></dt>
 <dd><p>Interpolate gene expression for the non - average grid points.</p>
 <p>This method filters the tissue grid to include only non - average grid points within the tissue,
 uses nearest neighbor interpolation to estimate gene expression for these points,
@@ -374,8 +374,8 @@ and creates an AnnData object for the interpolated grid.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.map_tissue">
-<span class="sig-name descname"><span class="pre">map_tissue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.map_tissue" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.map_tissue">
+<span class="sig-name descname"><span class="pre">map_tissue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.map_tissue" title="Link to this definition"></a></dt>
 <dd><p>Map tissue information to the tissue grid.</p>
 <p>This method expands barcode information, joins the barcode DataFrame to the tissue grid,
 fills missing barcode values, and adds spot coordinates to the tissue grid.</p>
@@ -387,8 +387,8 @@ fills missing barcode values, and adds spot coordinates to the tissue grid.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.mark_bc_label">
-<span class="sig-name descname"><span class="pre">mark_bc_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.mark_bc_label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.mark_bc_label">
+<span class="sig-name descname"><span class="pre">mark_bc_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.mark_bc_label" title="Link to this definition"></a></dt>
 <dd><p>Mark barcode labels in the array_forBarcode.</p>
 <p>This method assigns a number to a specific position in the array_forBarcode based on the center coordinates of a row.</p>
 <dl class="field-list simple">
@@ -402,8 +402,8 @@ fills missing barcode values, and adds spot coordinates to the tissue grid.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.mark_tissue_grid">
-<span class="sig-name descname"><span class="pre">mark_tissue_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.mark_tissue_grid" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.mark_tissue_grid">
+<span class="sig-name descname"><span class="pre">mark_tissue_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.mark_tissue_grid" title="Link to this definition"></a></dt>
 <dd><p>Mark tissue grid labels.</p>
 <p>This method attempts to assign the ‘in_tissue’ value of a row to a specific index in the tissue_grid DataFrame.
 If the index does not exist, it adds a new row to the DataFrame.</p>
@@ -418,8 +418,8 @@ If the index does not exist, it adds a new row to the DataFrame.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.mark_tissue_label">
-<span class="sig-name descname"><span class="pre">mark_tissue_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.mark_tissue_label" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.mark_tissue_label">
+<span class="sig-name descname"><span class="pre">mark_tissue_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.mark_tissue_label" title="Link to this definition"></a></dt>
 <dd><p>Mark tissue labels in the array_forIntissue.</p>
 <p>This method attempts to assign the ‘in_tissue’ value of a row to a specific position in the array_forIntissue.
 If an exception occurs, the method does nothing.</p>
@@ -434,8 +434,8 @@ If an exception occurs, the method does nothing.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.process_adata">
-<span class="sig-name descname"><span class="pre">process_adata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.process_adata" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.process_adata">
+<span class="sig-name descname"><span class="pre">process_adata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.process_adata" title="Link to this definition"></a></dt>
 <dd><p>Process the AnnData object.</p>
 <p>This method finds the average grid, interpolates gene expression for non - average grid points,
 and concatenates the resulting AnnData objects.</p>
@@ -446,8 +446,8 @@ and concatenates the resulting AnnData objects.</p>
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">storm.VisiumReader</span> <span class="kn">import</span> <span class="n">VisiumReader</span>
-<span class="kn">from</span> <span class="nn">storm.pp</span> <span class="kn">import</span> <span class="n">VisiumPreprocesser</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">squall.VisiumReader</span> <span class="kn">import</span> <span class="n">VisiumReader</span>
+<span class="kn">from</span> <span class="nn">squall.pp</span> <span class="kn">import</span> <span class="n">VisiumPreprocesser</span>
 <span class="n">Reader</span><span class="o">=</span><span class="n">VisiumReader</span><span class="p">()</span>
 <span class="n">Reader</span><span class="o">.</span><span class="n">read_all</span><span class="p">(</span><span class="n">folder_path</span><span class="o">=</span><span class="s2">&quot;../Visium_Human_Breast_Cancer&quot;</span><span class="p">,</span><span class="n">gene_token</span><span class="o">=</span><span class="s2">&quot;../gene_token_homologs.csv&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;symbol&quot;</span><span class="p">)</span>
 <span class="n">processer</span><span class="o">=</span><span class="n">VisiumPreprocesser</span><span class="p">(</span><span class="n">Reader</span><span class="p">,</span><span class="mi">224</span><span class="p">)</span>
@@ -478,8 +478,8 @@ mouse:16
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.process_img">
-<span class="sig-name descname"><span class="pre">process_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.process_img" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.process_img">
+<span class="sig-name descname"><span class="pre">process_img</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.process_img" title="Link to this definition"></a></dt>
 <dd><p>Process the H&amp;E image.</p>
 <p>This method processes the tissue position data, rounds the spot coordinates,
 generates the tissue grid, maps tissue information, and crops the H&amp;E image.</p>
@@ -508,8 +508,8 @@ in the processed H&amp;E image. Each element corresponds to a color channel (e.g
 </dl>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">storm.VisiumReader</span> <span class="kn">import</span> <span class="n">VisiumReader</span>
-<span class="kn">from</span> <span class="nn">storm.pp</span> <span class="kn">import</span> <span class="n">VisiumPreprocesser</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">squall.VisiumReader</span> <span class="kn">import</span> <span class="n">VisiumReader</span>
+<span class="kn">from</span> <span class="nn">squall.pp</span> <span class="kn">import</span> <span class="n">VisiumPreprocesser</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">Reader</span><span class="o">=</span><span class="n">VisiumReader</span><span class="p">()</span>
@@ -590,8 +590,8 @@ s_004_16_0-n     4.0     0.0
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.process_tpl">
-<span class="sig-name descname"><span class="pre">process_tpl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.process_tpl" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.process_tpl">
+<span class="sig-name descname"><span class="pre">process_tpl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.process_tpl" title="Link to this definition"></a></dt>
 <dd><p>Process the tissue position data in a CSV - like DataFrame.</p>
 <p>This method modifies the internal DataFrame ‘tissue_position_list’ directly.
 It sets the index to ‘barcode’, removes rows until the first barcode starts with ‘0’ or ‘1’,
@@ -608,8 +608,8 @@ and adds two new columns initialized as None.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.round_spot">
-<span class="sig-name descname"><span class="pre">round_spot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.round_spot" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.round_spot">
+<span class="sig-name descname"><span class="pre">round_spot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.round_spot" title="Link to this definition"></a></dt>
 <dd><p>Round the coordinates of spots to grid lines.</p>
 <p>This method calculates the radius of a circle based on tissue scale factor and spot diameter.
 It rounds the top - left corner coordinates of each tissue position to the nearest grid line (with 4 as the grid size),
@@ -623,8 +623,8 @@ and finally transforms the tissue position list by normalizing the rounded top -
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="storm.pp.VisiumPreprocesser.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_grid_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_h5ad_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_png_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_color_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.VisiumPreprocesser.save" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.VisiumPreprocesser.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_grid_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_h5ad_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_png_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_color_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.VisiumPreprocesser.save" title="Link to this definition"></a></dt>
 <dd><p>Save the processed data to files.</p>
 <p>This method processes the H&amp;E image, saves color features, the H&amp;E image,
 the tissue grid, and the final AnnData object to files if the corresponding file paths are provided.</p>
@@ -646,8 +646,8 @@ the tissue grid, and the final AnnData object to files if the corresponding file
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.downsample_svs">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">downsample_svs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_svs_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tiff_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_mpp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.downsample_svs" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.downsample_svs">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">downsample_svs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_svs_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_tiff_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_mpp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.downsample_svs" title="Link to this definition"></a></dt>
 <dd><p>Downsample an SVS whole slide image to specified target microns per pixel (MPP) and save as TIFF</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -661,8 +661,8 @@ the tissue grid, and the final AnnData object to files if the corresponding file
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.exc_he">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">exc_he</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stain_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.exc_he" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.exc_he">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">exc_he</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stain_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.exc_he" title="Link to this definition"></a></dt>
 <dd><p>Extract Hematoxylin and Eosin channels from an image.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -681,8 +681,8 @@ the tissue grid, and the final AnnData object to files if the corresponding file
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.exc_tissue">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">exc_tissue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lumin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.exc_tissue" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.exc_tissue">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">exc_tissue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lumin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.exc_tissue" title="Link to this definition"></a></dt>
 <dd><p>Generate a tissue mask from an RGB image using either luminance thresholding or Otsu’s method.</p>
 <p>This function takes an RGB image and creates a binary mask to identify the tissue region within the image.
 It supports two methods: luminance thresholding and Otsu’s method for automatic threshold selection.</p>
@@ -713,8 +713,8 @@ Values range from 0 to 1. Defaults to 0.8.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.extract_tiles">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">extract_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tiff_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.extract_tiles" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.extract_tiles">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">extract_tiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tiff_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5_folder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_folder</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.extract_tiles" title="Link to this definition"></a></dt>
 <dd><p>Extract image tiles from TIFF images using coordinates stored in H5 files</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -728,8 +728,8 @@ Values range from 0 to 1. Defaults to 0.8.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.process_folder">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">process_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_mpp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.process_folder" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.process_folder">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">process_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_mpp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.process_folder" title="Link to this definition"></a></dt>
 <dd><p>Batch process SVS files in a directory to downsample and convert to TIFF format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -746,8 +746,8 @@ Values range from 0 to 1. Defaults to 0.8.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="storm.pp.white_balance_using_white_point">
-<span class="sig-prename descclassname"><span class="pre">storm.pp.</span></span><span class="sig-name descname"><span class="pre">white_balance_using_white_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storm.pp.white_balance_using_white_point" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="squall.pp.white_balance_using_white_point">
+<span class="sig-prename descclassname"><span class="pre">squall.pp.</span></span><span class="sig-name descname"><span class="pre">white_balance_using_white_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#squall.pp.white_balance_using_white_point" title="Link to this definition"></a></dt>
 <dd><p>Perform white balance on an RGB image using the white point method.</p>
 <p>This function adjusts the color balance of an RGB image by calculating the white point
 from the masked region of the image. It then applies gain factors to each color channel

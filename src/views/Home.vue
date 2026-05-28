@@ -1,8 +1,8 @@
 <template>
   <div class="document-page">
-    <h1>STORM Documentation</h1>
+    <h1>SQUALL Documentation</h1>
     <p>
-      STORM is a 555M-parameter multimodal foundation model that bridges H&amp;E pathology images and spatial
+      SQUALL is a 555M-parameter multimodal foundation model that bridges H&amp;E pathology images and spatial
       transcriptomics, unifying morphology and molecular signals. Two-stage self-supervised pretraining equips it
       for cross-modal alignment, reconstruction, and downstream adaptation.
     </p>

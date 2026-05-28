@@ -64,7 +64,7 @@ const isActive = (path) => route.path === path || route.path.startsWith(`${path}
       <div class="logo-box">
         <img class="logo-img" :src="logo" alt="logo" />
       </div>
-      <h1 class="logo">STORM</h1>
+      <h1 class="logo">SQUALL</h1>
     </header>
 
     <div class="main-content">

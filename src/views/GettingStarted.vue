@@ -1,7 +1,7 @@
 <template>
   <div class="document-page">
     <h1>Getting Started</h1>
-    <p>Use this quickstart to set up a Python environment and run STORM.</p>
+    <p>Use this quickstart to set up a Python environment and run SQUALL.</p>
 
     <h2>Prerequisites</h2>
     <ul>
@@ -14,15 +14,15 @@
     <pre><code>python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\\Scripts\\activate</code></pre>
 
-    <h2>Step 2: Install STORM</h2>
+    <h2>Step 2: Install SQUALL</h2>
     <pre><code>pip install --upgrade pip
-pip install storm-foundation</code></pre>
+pip install squall-foundation</code></pre>
 
     <h2>Step 3: Minimal usage</h2>
-    <pre><code>import storm
-from storm import StormModel
+    <pre><code>import squall
+from squall import SQUALLModel
 
-model = StormModel.from_pretrained("storm-base")
+model = SQUALLModel.from_pretrained("squall-base")
 # Embed a pathology tile and align with spatial transcriptomics context
 embedding = model.embed_image("path/to/slide_tile.png")
 
@@ -32,7 +32,7 @@ embedding = model.embed_image("path/to/slide_tile.png")
     <h2>Next steps</h2>
     <ul>
       <li>Check dataset requirements: paired H&amp;E tiles and spatial coordinates.</li>
-      <li>Review model cards for available checkpoints (e.g., storm-base).</li>
+      <li>Review model cards for available checkpoints (e.g., squall-base).</li>
       <li>See Tutorials for Visium and custom data preprocessing.</li>
     </ul>
   </div>

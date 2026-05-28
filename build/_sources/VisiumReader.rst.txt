@@ -1,7 +1,7 @@
 VisiumReader
 =======================
 
-.. automodule:: storm.VisiumReader
+.. automodule:: squall.VisiumReader
    :members:
    :undoc-members:
    :show-inheritance:

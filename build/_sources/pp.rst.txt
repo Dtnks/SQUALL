@@ -1,7 +1,7 @@
 pp
 ==========================
 
-.. automodule:: storm.pp
+.. automodule:: squall.pp
    :members:
    :undoc-members:
    :show-inheritance:

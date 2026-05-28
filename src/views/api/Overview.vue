@@ -1,7 +1,7 @@
 <template>
   <div class="doc">
     <h2>Overview</h2>
-    <p>This page distills the original Sphinx docs into STORM API modules. Use the tabs to browse detailed pages and examples.</p>
+    <p>This page distills the original Sphinx docs into SQUALL API modules. Use the tabs to browse detailed pages and examples.</p>
 
     <section>
       <h3>Modules</h3>
