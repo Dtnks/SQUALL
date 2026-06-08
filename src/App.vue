@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-console.log('App.vue')
 import logo from './assets/logo.png'
 const router = useRouter()
 const route = useRoute()
@@ -42,7 +41,6 @@ const isActive = (path) => route.path === path || route.path.startsWith(`${path}
 
 <template>
   <div class="app-container">
-    <!-- 顶部导航栏 -->
     <header class="header">
       <button class="menu-toggle" @click="toggleMenu">
         <svg
@@ -68,7 +66,6 @@ const isActive = (path) => route.path === path || route.path.startsWith(`${path}
     </header>
 
     <div class="main-content">
-      <!-- 左侧菜单 -->
       <aside class="sidebar" :class="{ 'sidebar-closed': !isMenuOpen }">
         <nav class="menu">
           <ul>
@@ -88,7 +85,6 @@ const isActive = (path) => route.path === path || route.path.startsWith(`${path}
         </nav>
       </aside>
 
-      <!-- 右侧内容 -->
       <main class="content">
         <router-view />
       </main>
@@ -239,9 +235,6 @@ body {
 
   .content {
     padding: 20px;
-  }
-  .test{
-    color: red;
   }
 }
 </style>

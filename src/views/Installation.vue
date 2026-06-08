@@ -1,5 +1,13 @@
+<!--
+ * @Autor: ERP
+ * @Email: 邮箱
+ * @Description: 
+ * @CreateDate: Do not edit
+ * @LastEditors: daijiateng.1
+-->
 <template>
-  <div class="document-page">
+<div></div>
+  <!-- <div class="document-page">
     <h1>Installation</h1>
     <p>SQUALL is a Python package for pathology–spatial transcriptomics modeling. Choose one of the methods below.</p>
 
@@ -24,14 +32,12 @@ pip install torch --extra-index-url https://download.pytorch.org/whl/cu121
 pip install squall-foundation[inference]</code></pre>
 
     <h2>Verify</h2>
-    <p>修改文案测试</p>
     <p>Verify the installation by running the following command:</p>
     <pre><code>python -c "import squall; print(squall.__version__)"</code></pre>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
-/* 样式与其他页面类似 */
 .document-page {
   max-width: 800px;
 }

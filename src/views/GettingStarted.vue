@@ -1,5 +1,5 @@
 <template>
-  <div class="document-page">
+  <!-- <div class="document-page">
     <h1>Getting Started</h1>
     <p>Use this quickstart to set up a Python environment and run SQUALL.</p>
 
@@ -35,7 +35,8 @@ embedding = model.embed_image("path/to/slide_tile.png")
       <li>Review model cards for available checkpoints (e.g., squall-base).</li>
       <li>See Tutorials for Visium and custom data preprocessing.</li>
     </ul>
-  </div>
+  </div> -->
+  <div></div>
 </template>
 
 <style scoped>
