@@ -19,25 +19,33 @@ const router = createRouter({
       component: () => import('../views/Installation.vue'),
     },
     {
-      path: '/tutorials',
-      component: () => import('../views/tutorials/TutorialLayout.vue'),
-      children: [
-        {
-          path: '',
-          redirect: '/tutorials/visium',
-        },
-        {
-          path: 'visium',
-          name: 'Visum',
-          component: () => import('../views/tutorials/Visium.vue'),
-        },
-        {
-          path: 'gt',
-          name: 'TutorialGT',
-          component: () => import('../views/tutorials/gt.vue'),
-        },
-      ],
+  path: '/tutorials',
+  component: () => import('../views/tutorials/TutorialLayout.vue'),
+  children: [
+    {
+      path: '',
+      redirect: '/tutorials/gex-prediction',
     },
+    {
+      path: 'gex-prediction',
+      name: 'GEXPrediction',
+      component: () => import('../views/tutorials/NotebookPage.vue'),
+      props: {
+        title: 'GEX Prediction',
+        filename: 'Tutorial_inference_SQUALL.html',
+      },
+    },
+    {
+      path: 'spatial-domain',
+      name: 'SpatialDomain',
+      component: () => import('../views/tutorials/NotebookPage.vue'),
+      props: {
+        title: 'Spatial Domain',
+        filename: 'Tutorial_clustering_SQUALL.html',
+      },
+    },
+  ],
+},
     {
       path: '/contributors',
       name: 'Contributors',
