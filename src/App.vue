@@ -15,13 +15,19 @@ const menuItems = [
   { path: '/getting-started', name: 'Getting Started' },
   { path: '/installation', name: 'Installation' },
   {
-    path: '/tutorials',
-    name: 'Tutorials',
-    children: [
-      { path: '/tutorials/visium', name: 'Visium' },
-      { path: '/tutorials/gt', name: 'gt' },
-    ],
-  },
+  path: '/tutorials',
+  name: 'Tutorials',
+  children: [
+    {
+      path: '/tutorials/gex-prediction',
+      name: 'GEX Prediction',
+    },
+    {
+      path: '/tutorials/spatial-domain',
+      name: 'Spatial Domain',
+    },
+  ],
+},
   { path: '/contributors', name: 'Contributors' },
   {
     path: '/api',
