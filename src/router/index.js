@@ -24,7 +24,12 @@ const router = createRouter({
   children: [
     {
       path: '',
-      redirect: '/tutorials/gex-prediction',
+      redirect: '/tutorials/visium',
+    },
+    {
+      path: 'visium',
+      name: 'Visium',
+      component: () => import('../views/tutorials/Visium.vue'),
     },
     {
       path: 'gex-prediction',
