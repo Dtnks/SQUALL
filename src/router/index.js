@@ -27,10 +27,14 @@ const router = createRouter({
       redirect: '/tutorials/visium',
     },
     {
-      path: 'visium',
-      name: 'Visium',
-      component: () => import('../views/tutorials/Visium.vue'),
-    },
+  path: 'visium',
+  name: 'Visium',
+  component: () => import('../views/tutorials/NotebookPage.vue'),
+  props: {
+    title: 'Visium',
+    filename: 'Tutorial_visium_SQUALL.html',
+  },
+},
     {
       path: 'gex-prediction',
       name: 'GEXPrediction',
