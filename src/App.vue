@@ -19,6 +19,10 @@ const menuItems = [
   name: 'Tutorials',
   children: [
     {
+      path: '/tutorials/visium',
+      name: 'Visium',
+    },
+    {
       path: '/tutorials/gex-prediction',
       name: 'GEX Prediction',
     },
