@@ -30,6 +30,10 @@ const menuItems = [
       path: '/tutorials/spatial-domain',
       name: 'Spatial Domain',
     },
+    {
+      path: '/tutorials/survival',
+      name: 'Survival Prediction',
+    },
   ],
 },
   { path: '/contributors', name: 'Contributors' },
