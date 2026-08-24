@@ -12,10 +12,20 @@
           <div class="desc">Leads design, core implementation, and documentation.</div>
         </li>
         <li>
-          <div class="name">Project Collaborators</div>
-          <div class="role">Engineering & Research</div>
-          <div class="desc">Support feature development, data processing, and validation.</div>
-        </li>
+  <div class="name">Bowen Qin</div>
+  <div class="role">Engineering & Research</div>
+  <div class="desc">
+    Supports feature development, data processing, and validation.
+  </div>
+</li>
+
+<li>
+  <div class="name">Jiateng Dai</div>
+  <div class="role">Engineering & Research</div>
+  <div class="desc">
+    Supports feature development, data processing, and validation.
+  </div>
+</li>
       </ul>
     </section>
 
