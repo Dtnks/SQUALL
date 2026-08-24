@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQUALL Tutorial: Survival Prediction on TCGA-CESC</title>
+  <style>
+    :root { --ink:#1f2937; --muted:#5f6b7a; --line:#dfe5ec; --blue:#2563eb; --soft:#f6f8fb; --note:#eff6ff; --warn:#fff7ed; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:#fff; font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+    main { max-width:1020px; margin:0 auto; padding:48px 32px 80px; }
+    h1 { margin:0 0 10px; font-size:2.35rem; line-height:1.2; color:#14213d; }
+    h2 { margin:42px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); color:#1e3a5f; }
+    h3 { margin:28px 0 10px; color:#294d73; }
+    p, li { color:#374151; }
+    .lead { margin:0 0 28px; color:var(--muted); font-size:1.08rem; }
+    .flow { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:24px 0; }
+    .flow div { padding:15px; border:1px solid var(--line); border-radius:10px; background:var(--soft); text-align:center; }
+    .flow strong { display:block; color:#1d4ed8; }
+    nav { padding:18px 22px; border:1px solid var(--line); border-radius:10px; background:var(--soft); }
+    nav a { color:var(--blue); text-decoration:none; }
+    nav ol { margin:6px 0 0; padding-left:22px; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.91em; }
+    pre { position:relative; overflow:auto; margin:14px 0 22px; padding:18px 20px; border:1px solid #d8dee8; border-radius:9px; background:#f7f9fc; line-height:1.55; }
+    pre code { color:#172033; white-space:pre; }
+    .note, .warning { margin:18px 0; padding:14px 18px; border-left:4px solid var(--blue); border-radius:6px; background:var(--note); }
+    .warning { border-color:#ea580c; background:var(--warn); }
+    table { width:100%; border-collapse:collapse; margin:14px 0 24px; }
+    th, td { padding:10px 12px; border:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:var(--soft); }
+    .small { color:var(--muted); font-size:.92rem; }
+    @media (max-width:720px) { main{padding:28px 18px 60px}.flow{grid-template-columns:1fr}h1{font-size:1.85rem} }
+  </style>
+</head>
+<body>
+<main>
+  <h1>SQUALL survival prediction on TCGA-CESC</h1>
+  <p class="lead">An end-to-end tutorial for extracting slide embeddings with a pretrained SQUALL checkpoint and training a five-fold attention-based multiple-instance learning model with Cox loss.</p>
+
+  <div class="flow">
+    <div><strong>1. Tiles</strong>TCGA-CESC image patches</div>
+    <div><strong>2. Embeddings</strong>SQUALL slide features</div>
+    <div><strong>3. Survival model</strong>ABMIL + Cox loss</div>
+  </div>
+
+  <nav>
+    <strong>Contents</strong>
+    <ol>
+      <li><a href="#requirements">Requirements and directory layout</a></li>
+      <li><a href="#embedding">Extract SQUALL embeddings</a></li>
+      <li><a href="#survival">Configure five-fold survival training</a></li>
+      <li><a href="#run-folds">Run the five folds</a></li>
+      <li><a href="#checks">Validation and troubleshooting</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="requirements">1. Requirements and directory layout</h2>
+  <p>This workflow assumes that TCGA-CESC slides have already been tiled and that overall-survival labels have been split into five JSON files. Run all commands from the SQUALL repository root.</p>
+  <pre><code>SQUALL/
+├── finetune.py
+├── abmil.py
+├── scripts/
+│   ├── survival/get_embedding/
+│   └── survival/cesc/
+├── checkpoints/
+├── data/TCGA-CESC-tiles/
+├── labels/TCGA-CESC-survival/
+└── features/TCGA-CESC/</code></pre>
+
+  <p>Define site-specific locations once. Do not hard-code user names or private home-directory paths in files intended for publication.</p>
+  <pre><code>export SQUALL_ROOT=/path/to/SQUALL
+export TILE_ROOT=/path/to/TCGA-CESC-tiles
+export FEATURE_ROOT=/path/to/features/TCGA-CESC
+export LABEL_ROOT=/path/to/TCGA-CESC-survival
+export SQUALL_CKPT=/path/to/squall-pretrained.pth
+
+cd "$SQUALL_ROOT"</code></pre>
+
+  <h2 id="embedding">2. Extract SQUALL embeddings</h2>
+  <h3>2.1 Dataset configuration</h3>
+  <p>Create <code>scripts/survival/get_embedding/HistMolABMIL_getembedding.yaml</code>:</p>
+  <pre><code>NAME: HistMolABMIL_embedding
+DATA_PATH: /path/to/TCGA-CESC-tiles</code></pre>
+
+  <h3>2.2 Embedding configuration</h3>
+  <p>Create <code>scripts/survival/get_embedding/large_abmil_RNA.yaml</code>. The architectural values must match the pretrained checkpoint.</p>
+  <pre><code>dataset:
+  train:
+    _base_: scripts/survival/get_embedding/HistMolABMIL_getembedding.yaml
+    others:
+      if_abmil: false
+      if_embedding: true
+      if_benchmark: false
+      subset: train
+      sample_num: 32
+      bs: 1024
+  val:
+    _base_: scripts/survival/get_embedding/HistMolABMIL_getembedding.yaml
+    others:
+      if_abmil: false
+      if_embedding: true
+      if_benchmark: false
+      subset: test
+      sample_num: 32
+      bs: 1024
+
+model:
+  NAME: StormClassification
+  img_size: 224
+  expr_size: 56
+  expr_chans: 15757
+  down_sample: 16
+  mask_ratio: 0.5
+  embed_dim: 1024
+  depth: 24
+  merge_layer_depth: 16
+  drop_path_rate: 0.1
+  num_heads: 16
+  pos_type: mlp
+  decoder_depth: 4
+  PE_type: RPB
+  if_rpb: true
+  if_PE: false
+  cls_dim: 18
+  loss: CE
+
+total_bs: 1024
+step_per_update: 1
+max_epoch: 300
+grad_norm_clip: 10</code></pre>
+  <div class="note"><strong>Compatibility note.</strong> Some code versions retain the internal class name <code>StormClassification</code>. Keep the class name expected by your installed repository even when the public model/tutorial name is SQUALL.</div>
+
+  <h3>2.3 Run feature extraction</h3>
+  <p>Create <code>scripts/survival/get_embedding/get_embedding_cesc.sh</code>:</p>
+  <pre><code>#!/usr/bin/env bash
+set -euo pipefail
+
+: "${SQUALL_CKPT:?Set SQUALL_CKPT first}"
+: "${FEATURE_ROOT:?Set FEATURE_ROOT first}"
+
+CUDA_VISIBLE_DEVICES=0 python finetune.py \
+  --config scripts/survival/get_embedding/large_abmil_RNA.yaml \
+  --get_embedding \
+  --exp_name getembedding_TCGA_CESC_SQUALL \
+  --ckpts "$SQUALL_CKPT" \
+  --save_dir "$FEATURE_ROOT"</code></pre>
+
+  <p>Activate the environment and run the extraction script from the repository root:</p>
+  <pre><code>source /path/to/miniconda3/etc/profile.d/conda.sh
+conda activate SQUALL
+
+export SQUALL_ROOT=/path/to/SQUALL
+export FEATURE_ROOT=/path/to/features/TCGA-CESC
+export SQUALL_CKPT=/path/to/squall-pretrained.pth
+
+cd "$SQUALL_ROOT"
+bash scripts/survival/get_embedding/get_embedding_cesc.sh</code></pre>
+
+  <h2 id="survival">3. Configure five-fold survival training</h2>
+  <h3>3.1 Fold-specific dataset files</h3>
+  <p>For each fold <code>k = 1,...,5</code>, create <code>HistMolABMIL_lowres_tissue_foldk.yaml</code>:</p>
+  <pre><code>NAME: TCGASlideEmbedding
+DATA_PATH: /path/to/features/TCGA-CESC/train
+label_dict: /path/to/TCGA-CESC-survival/Survival_TCGA_CESC_fold1.json</code></pre>
+  <p>Change only the label filename for folds 2–5. Each JSON file must define the training/test split and the survival time/event fields expected by the dataset loader.</p>
+
+  <h3>3.2 ABMIL–Cox configuration</h3>
+  <p>Create one configuration per fold. The following is the fold-1 template:</p>
+  <pre><code>abmil_type: Survival
+fwd_type: benchmark
+accumulation_steps: 32
+
+dataset:
+  train:
+    _base_: scripts/survival/cesc/HistMolABMIL_lowres_tissue_fold1.yaml
+    others:
+      bs: 1024
+      if_abmil: true
+      if_benchmark: true
+      if_embedding: true
+      sample_num: 32
+      subset: train
+  val:
+    _base_: scripts/survival/cesc/HistMolABMIL_lowres_tissue_fold1.yaml
+    others:
+      bs: 1024
+      if_abmil: true
+      if_benchmark: true
+      if_embedding: true
+      sample_num: 32
+      subset: test
+
+model:
+  NAME: ABMIL
+  cls_dim: 1
+  embed_dim: 1024
+  loss: COX
+  PE_type: RPB
+  PE_RPB_fixed: false
+  if_rpb: false
+  if_PE: false
+
+optimizer:
+  type: AdamW
+  freeze: false
+  kwargs:
+    lr: 2e-4
+    weight_decay: 1e-5
+    betas: [0.9, 0.999]
+
+scheduler:
+  type: CosLR
+  kwargs:
+    epochs: 100
+    initial_epochs: 5.0
+    lr_min: 2e-4
+    warmup_lr_init: 2e-4
+    cycle_limit: 1
+
+max_epoch: 100
+total_bs: 4096
+step_per_update: 1
+grad_norm_clip: 10</code></pre>
+  <table>
+    <thead><tr><th>Setting</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td><code>cls_dim: 1</code></td><td>Produces one continuous risk score per slide/patient.</td></tr>
+      <tr><td><code>loss: COX</code></td><td>Optimizes the Cox partial likelihood for censored survival data.</td></tr>
+      <tr><td><code>if_embedding: true</code></td><td>Loads precomputed SQUALL features rather than raw image tiles.</td></tr>
+      <tr><td><code>sample_num: 32</code></td><td>Controls the number of instances sampled for each bag according to this codebase's loader.</td></tr>
+      <tr><td><code>accumulation_steps: 32</code></td><td>Accumulates gradients to obtain the requested effective batch behavior.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.3 Run one fold</h3>
+  <pre><code>CUDA_VISIBLE_DEVICES=0 python abmil.py \
+  --config scripts/survival/cesc/large_abmil_lowres_tissue_fold1.yaml \
+  --exp_name SQUALL_TCGA_CESC_survival_fold1 \
+  --seed 2 \
+  --freeze_all</code></pre>
+  <div class="warning"><strong>Important:</strong> do not leave a trailing backslash after <code>--freeze_all</code>. A backslash means that the shell command continues on the next line.</div>
+
+  <h2 id="run-folds">4. Run all five folds</h2>
+  <p>The following Bash script runs the five folds sequentially and writes separate log files for each fold:</p>
+  <pre><code>#!/usr/bin/env bash
+set -euo pipefail
+source /path/to/miniconda3/etc/profile.d/conda.sh
+conda activate SQUALL
+
+export SQUALL_ROOT=/path/to/SQUALL
+cd "$SQUALL_ROOT"
+
+mkdir -p logs
+
+for fold in 1 2 3 4 5; do
+  echo "Running fold ${fold}"
+  CUDA_VISIBLE_DEVICES=0 python abmil.py \
+    --config "scripts/survival/cesc/large_abmil_lowres_tissue_fold${fold}.yaml" \
+    --exp_name "SQUALL_TCGA_CESC_survival_fold${fold}" \
+    --seed 2 \
+    --freeze_all \
+    &gt; "logs/CESC_survival_fold${fold}.out" 2&gt;&amp;1
+done</code></pre>
+  <p>Save it as <code>run_cesc_survival_5fold.sh</code>, then run:</p>
+  <pre><code>mkdir -p logs
+chmod +x run_cesc_survival_5fold.sh
+./run_cesc_survival_5fold.sh</code></pre>
+  <div class="note"><strong>Tip:</strong> the folds run sequentially on GPU 0. To use another GPU, change <code>CUDA_VISIBLE_DEVICES=0</code>. Ensure that no OV dataset or configuration remains in a CESC experiment.</div>
+
+  <h2 id="checks">5. Validation and troubleshooting</h2>
+  <h3>Before survival training</h3>
+  <ul>
+    <li>Confirm that <code>FEATURE_ROOT/train</code> contains embeddings for the expected CESC cases.</li>
+    <li>Confirm that patient/slide identifiers match the keys in every fold JSON.</li>
+    <li>Check that the feature dimension is 1024, matching <code>embed_dim</code>.</li>
+    <li>Check that survival time is positive and event status uses the convention expected by <code>abmil.py</code>.</li>
+  </ul>
+  <h3>During training</h3>
+  <pre><code>tail -f logs/CESC_survival_fold1.out
+
+# Check GPU utilization in another terminal when needed
+nvidia-smi</code></pre>
+  <h3>Recommended report</h3>
+  <p>Report the concordance index for each fold and summarize performance as mean ± standard deviation across all five folds. Keep the split JSON files, random seed, checkpoint identity, and software revision fixed for reproducibility.</p>
+
+  <div class="note"><strong>Pipeline summary:</strong> extract CESC slide embeddings once, verify that feature identifiers match the survival labels, then train five independent ABMIL–Cox models using fold-specific JSON splits.</div>
+</main>
+</body>
+</html>
