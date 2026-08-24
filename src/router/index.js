@@ -53,6 +53,15 @@ const router = createRouter({
         filename: 'Tutorial_clustering_SQUALL.html',
       },
     },
+    {
+      path: 'survival',
+      name: 'Survival',
+      component: () => import('../views/tutorials/NotebookPage.vue'),
+      props: {
+        title: 'Survival Prediction',
+        filename: 'Tutorial_survival_SQUALL.html',
+      },
+    },
   ],
 },
     {
