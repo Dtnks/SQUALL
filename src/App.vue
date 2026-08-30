@@ -12,7 +12,6 @@ const toggleMenu = () => {
 
 const menuItems = [
   { path: '/', name: 'Home' },
-  { path: '/getting-started', name: 'Getting Started' },
   { path: '/installation', name: 'Installation' },
   {
   path: '/tutorials',
