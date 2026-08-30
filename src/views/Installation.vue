@@ -31,7 +31,7 @@
           <p>Clone the project, create a dedicated environment, and install its Python dependencies.</p>
           <div class="code-block">
             <div class="code-title">Terminal</div>
-            <pre><code>git clone &lt;https://github.com/OswaldZhang/SQUALL-release/tree/main&gt;
+            <pre><code>git clone https://github.com/OswaldZhang/SQUALL-release.git;
 cd SQUALL
 
 conda create -n squall python=3.10 -y
@@ -40,10 +40,6 @@ conda activate squall
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .</code></pre>
-          </div>
-          <div class="note">
-            Replace <code>&lt;https://github.com/OswaldZhang/SQUALL-release/tree/main&gt;</code> with the repository URL provided by the project maintainers.
-            The editable installation keeps your environment linked to the local source tree.
           </div>
         </section>
 
