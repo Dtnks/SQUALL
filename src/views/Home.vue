@@ -34,7 +34,7 @@ import logo from '@/assets/logo.png'
     <section class="capabilities" aria-label="Core capabilities">
       <article>
         <span class="card-index">01</span>
-        <h3>Spatial domain discovery</h3>
+        <h3>Spatially aware clustering</h3>
         <p>Identify tissue regions and molecularly informed spatial structure from multimodal embeddings.</p>
       </article>
       <article>
