@@ -41,10 +41,10 @@ const router = createRouter({
     },
     {
       path: 'spatial-domain',
-      name: 'SpatialDomain',
+      name: 'Spatially aware clustering',
       component: () => import('../views/tutorials/NotebookPage.vue'),
       props: {
-        title: 'Spatial Domain',
+        title: 'Spatially aware clustering',
         filename: 'Tutorial_clustering_SQUALL.html',
       },
     },
