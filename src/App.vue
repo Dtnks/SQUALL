@@ -27,7 +27,7 @@ const menuItems = [
     },
     {
       path: '/tutorials/spatial-domain',
-      name: 'Spatial Domain',
+      name: 'Spatially aware clustering',
     },
     {
       path: '/tutorials/survival',
