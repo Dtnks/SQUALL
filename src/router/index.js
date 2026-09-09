@@ -40,7 +40,7 @@ const router = createRouter({
       },
     },
     {
-      path: 'spatial-domain',
+      path: 'Spatially aware clustering',
       name: 'Spatially aware clustering',
       component: () => import('../views/tutorials/NotebookPage.vue'),
       props: {
