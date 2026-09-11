@@ -26,7 +26,7 @@ const menuItems = [
       name: 'GEX Prediction',
     },
     {
-      path: '/tutorials/spatial-domain',
+      path: '/tutorials/spatial-aware-clustering',
       name: 'Spatially aware clustering',
     },
     {
