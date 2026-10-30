@@ -73,6 +73,17 @@ python -c "import squall; print('SQUALL import successful')"</code></pre>
             </router-link>
           </div>
         </section>
+        <section id="benchmark-environment">
+  <h2>Runtime benchmark environment</h2>
+  <p>
+    Unless otherwise specified, execution times reported for the subsequent
+    experiments were measured on the IO node, equipped with two Intel Xeon
+    Silver 4316 processors operating at 2.30 GHz (40 physical cores and
+    80 logical threads in total) and approximately 251 GiB of RAM.
+    The node ran CentOS Linux 7 (Core), with Linux kernel version
+    3.10.0-1160.el7.x86_64 and glibc version 2.17.
+  </p>
+</section>
       </article>
     </div>
   </div>
