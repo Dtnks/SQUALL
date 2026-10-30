@@ -83,6 +83,14 @@ python -c "import squall; print('SQUALL import successful')"</code></pre>
     The node ran CentOS Linux 7 (Core), with Linux kernel version
     3.10.0-1160.el7.x86_64 and glibc version 2.17.
   </p>
+  <h3>Installation time</h3>
+<p>
+  A fresh installation on the IO node completed in approximately
+  <strong>291 seconds (4 min 51 s)</strong>. This included downloading
+  and verifying the Miniconda installer, installing Miniconda with
+  Python 3.10, and installing dependencies from
+  <code>requirements.benchmark.txt</code> using pip.
+</p>
 </section>
       </article>
     </div>
